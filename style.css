@@ -1,0 +1,312 @@
+/* INDEX */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background-color: #003366;
+    padding: 20px;
+    text-align: center;
+}
+
+/* NAV */
+nav a {
+    background-color: #003366;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #0055aa;
+}
+
+/* MAIN */
+main {
+    padding: 30px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* SECTIONS */
+section {
+    margin-bottom: 25px;
+}
+
+/* LISTA DE DATOS */
+dl {
+    background-color: #e6f0ff;
+    padding: 20px;
+    border-left: 5px solid #003366;
+    border-radius: 5px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* PÁRRAFO */
+p {
+    margin: 20px 0;
+}
+
+/* ASIDE */
+aside {
+    background-color: #003366;
+    color: white;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+aside a {
+    color: #66ccff;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+/* IMÁGENES */
+img {
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/*IMAGENES FUEGO*/
+.fuego-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.fuego-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.fuego {
+    width: 100px;
+    height: 100px;
+}
+
+.frase {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.escudo {
+    width: 450px;
+    height: 225px;
+}
+
+/* VIDEO */
+video {
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #002244;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* ----- PAGINA JUGADORES ----- */
+
+/* Título dentro de main */
+main p {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Imagen del plantel */
+main img {
+    display: block;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Aside jugadores */
+aside {
+    background-color: #002b5c;
+}
+
+/* Categorías (Porteros, Defensas, etc) */
+aside ul > li {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #66ccff;
+}
+
+/* Listas de jugadores */
+aside ol {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+/* Cada jugador */
+aside ol li {
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Efecto hover jugadores */
+aside ol li:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+/* ----- ESTILO TITULOS ----- */
+
+section ul li {
+    list-style: none;
+    background-color: #003366;
+    color: white;
+    padding: 10px 15px;
+    margin: 15px 0 5px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+#tabla-titulos {
+    width: 80%;
+    margin: 40px 0 60px 240px;
+}
+
+section,
+#tabla-titulos {
+    margin-left: 220px;
+}
+/* ===== MENU LATERAL FIJO ===== */
+
+.menu-lateral {
+    position: fixed;
+    left: 0;
+    top: 120px;   /* donde empieza debajo del header */
+    width: 200px;
+
+    background-color: #e6e6e6;  /* gris */
+    padding: 15px 10px;
+    border-radius: 0 10px 10px 0;
+
+    height: auto;   /* IMPORTANTE */
+}
+
+.menu-lateral a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu-lateral a:hover {
+    background-color: #e0e0e0;
+}
+#tabla-titulos {
+    margin-left: 220px;
+}
+#tabla-titulos {
+    width: 100%;
+    margin: 40px 0 60px 0;  /* quitamos auto */
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(170, 55, 55, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* ===== TABLA TITULOS ===== */
+.contenido {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* Encabezado principal */
+#tabla-titulos thead tr:first-child {
+    background: linear-gradient(90deg, #0055aa, #0a60b6);
+    color: white;
+    font-size: 30px;
+}
+
+/* Segunda fila del encabezado */
+#tabla-titulos thead tr:nth-child(2) {
+    background-color: #216db9;
+    color: white;
+}
+
+/* Celdas */
+#tabla-titulos th,
+#tabla-titulos td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Filas alternadas */
+#tabla-titulos tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover en filas */
+#tabla-titulos tbody tr:hover {
+    background-color: #ffeaea;
+    transition: 0.3s;
+}
+/* ----- PAGINA HISTORIA ----- */
+
+h1 {
+    margin: 30px 20px 10px 20px;
+    color: #003366;
+}
+
+h4 {
+    margin: 25px 20px 10px 20px;
+    color: #0055aa;
+}
+
+p {
+    margin: 0 20px 20px 20px;
+}
+
+/* Separar tabla del margen izquierdo */
+table {
+    margin-left: 200px;
+    margin-top: 30px;
+}
