@@ -7,117 +7,119 @@
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="historia.html">Historia</a>
-        <a href="titulos.html">Titulos</a>
-        <a href="jugadores.html">Jugadores</a>
-        <a href="cuestionario.html">Cuestionario</a>
-    </nav>
-</header>
+    <header>
+        <h1>Wiki del Pachuca</h1>
 
-<main>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="historia.html">Historia</a>
+            <a href="titulos.html">Titulos</a>
+            <a href="jugadores.html">Jugadores</a>
+            <a href="cuestionario.html">Cuestionario</a>
+        </nav>
+    </header>
 
-    <h1>Registro de Aficionados del Club Pachuca</h1>
+    <main>
 
-    <form action="#" method="post">
+        <h1>Registro de Aficionados del Club Pachuca</h1>
 
-        <fieldset>
-            <legend>Datos personales</legend>
+        <form action="#" method="post">
 
-            <!-- Label explícito -->
-            <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <br><br>
+            <fieldset>
+                <legend>Datos personales</legend>
 
-            <!---->
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
-            <br><br>
+                <!-- Label explícito -->
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br><br>
 
-            <!---->
-            <label for="telefono">Número telefónico:</label>
-            <input type="tel" id="telefono" name="telefono">
-            <br><br>
+                <!---->
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                <br><br>
 
-        </fieldset>
+                <!---->
+                <label for="telefono">Número telefónico:</label>
+                <input type="tel" id="telefono" name="telefono">
+                <br><br>
 
-        <fieldset>
-            <legend>Preferencias deportivas</legend>
+            </fieldset>
 
-            <p>¿Desde cuándo eres aficionado?</p>
+            <fieldset>
+                <legend>Preferencias deportivas</legend>
 
-            <!-- Radio -->
-            <label>
-                <input type="radio" name="antiguedad" value="menos5">
-                Menos de 5 años
-            </label>
+                <p>¿Desde cuándo eres aficionado?</p>
 
-            <label>
-                <input type="radio" name="antiguedad" value="mas5">
-                Más de 5 años
-            </label>
-            <br><br>
+                <!-- Radio -->
+                <label>
+                    <input type="radio" name="antiguedad" value="menos5">
+                    Menos de 5 años
+                </label>
 
-            <p>¿Qué torneos sigues?</p>
+                <label>
+                    <input type="radio" name="antiguedad" value="mas5">
+                    Más de 5 años
+                </label>
+                <br><br>
 
-            <!-- Checkbox -->
-            <label>
-                <input type="checkbox" name="torneo" value="liga">
-                Liga MX
-            </label>
+                <p>¿Qué torneos sigues?</p>
 
-            <label>
-                <input type="checkbox" name="torneo" value="concacaf">
-                Concacaf
-            </label>
+                <!-- Checkbox -->
+                <label>
+                    <input type="checkbox" name="torneo" value="liga">
+                    Liga MX
+                </label>
 
-            <label>
-                <input type="checkbox" name="torneo" value="internacional">
-                Torneos Internacionales
-            </label>
+                <label>
+                    <input type="checkbox" name="torneo" value="concacaf">
+                    Concacaf
+                </label>
 
-        </fieldset>
+                <label>
+                    <input type="checkbox" name="torneo" value="internacional">
+                    Torneos Internacionales
+                </label>
 
-        <br>
+            </fieldset>
 
-        <fieldset>
-            <legend>Información adicional</legend>
-
-            <!-- Select -->
-            <label for="jugadorFavorito">Jugador favorito:</label>
-            <select id="jugadorFavorito" name="jugadorFavorito">
-                <option value="">Seleccione una opción</option>
-                <option value="idris">Oussama Idrissi</option>
-                <option value="valencia">Enner Valencia</option>
-                <option value="rondon">Salomón Rondón</option>
-            </select>
-            <br><br>
-
-            <!-- Textarea -->
-            <label for="comentarios">Comentarios sobre el club:</label>
             <br>
-            <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
-            <br><br>
 
-            <!-- File con accept y capture -->
-            <label for="foto">Sube una foto con tu jersey del Pachuca para ganara una entrada al siguiente juego:</label>
-            <input type="file" id="foto" name="foto" accept="image/*" capture="environment">
+            <fieldset>
+                <legend>Información adicional</legend>
 
-        </fieldset>
+                <!-- Select -->
+                <label for="jugadorFavorito">Jugador favorito:</label>
+                <select id="jugadorFavorito" name="jugadorFavorito">
+                    <option value="">Seleccione una opción</option>
+                    <option value="idris">Oussama Idrissi</option>
+                    <option value="valencia">Enner Valencia</option>
+                    <option value="rondon">Salomón Rondón</option>
+                </select>
+                <br><br>
 
-        <br>
+                <!-- Textarea -->
+                <label for="comentarios">Comentarios sobre el club:</label>
+                <br>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+                <br><br>
 
-        <input type="submit" value="Enviar formulario">
+                <!-- File con accept y capture -->
+                <label for="foto">Sube una foto con tu jersey del Pachuca para ganara una entrada al siguiente juego:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" capture="environment">
 
-    </form>
+            </fieldset>
 
-</main>
+            <br>
 
-<footer>
-    &copy; 2024 Wiki Del Pachuca. Todos los derechos reservados, HCM.
-</footer>
+            <input type="submit" value="Enviar formulario">
+
+        </form>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Wiki Del Pachuca. Todos los derechos reservados, HCM.
+    </footer>
 
 </body>
 </html>

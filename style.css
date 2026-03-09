@@ -1,4 +1,4 @@
-/* INDEX */
+/* ----- INDEX ----- */
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +14,24 @@ body {
 }
 
 /* HEADER */
-header {
+header{
     background-color: #003366;
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+/* TÍTULO DEL HEADER */
+header h1{
+    color: white;
+    margin-bottom: 10px;
 }
 
 /* NAV */
@@ -289,11 +303,17 @@ section,
     background-color: #ffeaea;
     transition: 0.3s;
 }
+
 /* ----- PAGINA HISTORIA ----- */
 
 h1 {
     margin: 30px 20px 10px 20px;
     color: #003366;
+}
+
+h3 {
+    margin: 30px 20px 10px 20px;
+    color: #ffeaea;
 }
 
 h4 {
