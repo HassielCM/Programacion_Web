@@ -65,24 +65,18 @@
     background-color: var(--color_secundario);
 }
 
-#main_index,
-#main_historia,
-#main_jugadores,
-#main_formulario,
-#main_titulos {
-    padding: 30px;
-    margin: 20px;
-    background-color: var(--color_contenedor);
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-}
-
 /* ===== MAIN ===== */
 #main_index {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 20px;
     grid-auto-flow: dense;
+
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
 }
 
 /* ===== DATOS ===== */
@@ -209,6 +203,13 @@ video, audio {
 }
 
 /* ===== HISTORIA ===== */
+#main_historia {
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
 
 /* TITULO */
 .titulo_historia {
@@ -230,6 +231,15 @@ video, audio {
 }
 
 /* ===== JUGADORES ===== */
+
+#main_jugadores {
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
 
 .titulo_jugadores {
     font-size: 22px;
@@ -275,8 +285,10 @@ video, audio {
 /* JUGADORES */
 .lista_jugadores li {
     margin-bottom: 5px;
+}
+.lista_jugadores li {
     padding: 6px 10px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     border-radius: 5px;
 }
 
@@ -285,9 +297,18 @@ video, audio {
     color: var(--color_texto_claro);
     background-color: var(--color_secundario);
     transform: translateX(8px);
-    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);}
+    box-shadow: 0px 3
+}
 
 /* ===== FORMULARIO ===== */
+
+#main_formulario {
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
 
 /* TITULO */
 .titulo_formulario {
@@ -411,6 +432,13 @@ select {
 
 /* ===== TITULOS ===== */
 
+#main_titulos {
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
 
 /* MENU LATERAL FIJO */
 .menu_titulos {
@@ -444,7 +472,6 @@ select {
 .seccion_titulos {
     margin-bottom: 40px;
     scroll-margin-top: 90px;
-    grid-column: 2;
 }
 
 .titulo_seccion {
@@ -480,4 +507,20 @@ select {
     margin: 10px auto 25px auto;
     border-radius: 10px;
     box-shadow: var(--sombra);
+}
+
+#main_titulos {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+
+    padding: 30px;
+    margin: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.seccion_titulos {
+    grid-column: 2;
 }
