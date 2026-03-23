@@ -1,21 +1,42 @@
-/* ----- INDEX ----- */
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    --color_principal: #003366;
+    --color_secundario: #0055aa;
+    --color_footer: #002244;
+
+    --color_fondo: #f2f6fc;
+    --color_contenedor: #ffffff;
+
+    --color_texto: #1a1a1a;
+    --color_texto_claro: #ffffff;
+
+    --color_acento: #66ccff;
+    --color_datos: #e6f0ff;
+    --color_datos2: #f1f6ff;
+
+    --sombra: 0px 4px 10px rgba(0,0,0,0.1);
+
+    --fuente_principal: Arial, sans-serif;
+}
+
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fc;
-    color: #1a1a1a;
+/* ===== BODY ===== */
+#body_principal {
+    font-family: var(--fuente_principal);
+    background-color: var(--color_fondo);
+    color: var(--color_texto);
     line-height: 1.6;
 }
 
-/* HEADER */
-header{
-    background-color: #003366;
+/* ===== HEADER ===== */
+#header_principal {
+    background-color: var(--color_principal);
     padding: 10px;
 
     display: flex;
@@ -24,20 +45,15 @@ header{
 
     position: sticky;
     top: 0;
-
     z-index: 1000;
 }
 
-/* TÍTULO DEL HEADER */
-header h1{
-    color: white;
-    margin-bottom: 10px;
+#titulo_principal {
+    color: var(--color_texto_claro);
 }
 
-/* NAV */
-nav a {
-    background-color: #003366;
-    color: rgb(255, 255, 255);
+.nav_principal .nav_link {
+    color: var(--color_texto_claro);
     text-decoration: none;
     margin: 0 15px;
     padding: 10px 15px;
@@ -45,78 +61,68 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover {
-    background-color: #0055aa;
+.nav_principal .nav_link:hover {
+    background-color: var(--color_secundario);
 }
 
-/* MAIN */
-main {
+#main_index,
+#main_historia,
+#main_jugadores,
+#main_formulario,
+#main_titulos {
     padding: 30px;
     margin: 20px;
-    background-color: white;
+    background-color: var(--color_contenedor);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--sombra);
 }
 
-/* SECTIONS */
-section {
-    margin-bottom: 25px;
+/* ===== MAIN ===== */
+#main_index {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    grid-auto-flow: dense;
 }
 
-/* LISTA DE DATOS */
-dl {
-    background-color: #e6f0ff;
+/* ===== DATOS ===== */
+.datos_index {
+    grid-column: 2;
+    background-color: var(--color_datos);
     padding: 20px;
-    border-left: 5px solid #003366;
+    border-left: 5px solid var(--color_principal);
     border-radius: 5px;
 }
 
-dt {
+.titulo_datos {
+    margin-bottom: 10px;
+}
+
+.dato_titulo {
     font-weight: bold;
     margin-top: 10px;
 }
 
-dd {
+.dato_descripcion {
     margin-left: 20px;
     margin-bottom: 10px;
 }
 
-/* PÁRRAFO */
-p {
+/* ===== DESCRIPCION ===== */
+.descripcion_index {
+    grid-column: 1;
+    font-size: 18px;
     margin: 20px 0;
 }
 
-/* ASIDE */
-aside {
-    background-color: #003366;
-    color: white;
-    padding: 25px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-aside a {
-    color: #66ccff;
-    text-decoration: none;
-}
-
-aside a:hover {
-    text-decoration: underline;
-}
-
-/* IMÁGENES */
-img {
-    margin: 10px 0;
-    border-radius: 8px;
-}
-
-/*IMAGENES FUEGO*/
-.fuego-container {
+/* ===== VISUAL ===== */
+.visual_index {
+    grid-column: 1;
     text-align: center;
     margin-top: 30px;
 }
 
-.fuego-texto {
+.fuego_texto {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,222 +145,339 @@ img {
     height: 225px;
 }
 
-/* VIDEO */
-video {
-    margin-top: 15px;
+/* ===== ASIDE ===== */
+.aside_principal {
+    background-color: var(--color_principal);
+    color: var(--color_texto_claro);
+    padding: 25px;
+    margin: 20px;
     border-radius: 10px;
 }
 
-/* FOOTER */
-footer {
-    background-color: #002244;
-    color: white;
+.aside_titulo {
+    margin-bottom: 10px;
+}
+
+.aside_lista {
+    margin-bottom: 20px;
+}
+
+.aside_link {
+    color: var(--color_acento);
+    text-decoration: none;
+}
+
+.aside_link:hover {
+    text-decoration: underline;
+}
+
+.imagen_leyenda {
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.texto_leyenda {
+    display: block;
+    margin-top: 10px;
+}
+
+.audio_leyenda {
+    margin-top: 10px;
+}
+
+.video_himno {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* ===== MEDIA ===== */
+img {
+    border-radius: 8px;
+}
+
+video, audio {
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+#footer_principal {
+    background-color: var(--color_footer);
+    color: var(--color_texto_claro);
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     margin-top: 20px;
 }
 
-/* ----- PAGINA JUGADORES ----- */
+/* ===== HISTORIA ===== */
 
-/* Título dentro de main */
-main p {
+/* TITULO */
+.titulo_historia {
+    color: var(--color_principal);
+    margin-bottom: 20px;
+}
+
+/* SUBTITULOS */
+.subtitulo_historia {
+    color: var(--color_secundario);
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* PARRAFOS */
+.parrafo_historia {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* ===== JUGADORES ===== */
+
+.titulo_jugadores {
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
+    color: var(--color_principal);
     margin-bottom: 20px;
-    color: #000000;
 }
 
-/* Imagen del plantel */
-main img {
-    display: block;
-    margin: 0 auto 30px auto;
+.imagen_plantel {
     border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    box-shadow: var(--sombra);
 }
 
-/* Aside jugadores */
-aside {
-    background-color: #002b5c;
+/* ===== ASIDE JUGADORES ===== */
+
+.aside_jugadores {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color_principal);
+    color: var(--color_texto_claro);
+    border-radius: 10px;
 }
 
-/* Categorías (Porteros, Defensas, etc) */
-aside ul > li {
-    font-size: 20px;
+/* LISTA GENERAL */
+.lista_posiciones {
+    list-style: none;
+}
+
+/* TITULOS DE POSICION */
+.posicion {
     font-weight: bold;
-    margin-top: 20px;
-    color: #66ccff;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-/* Listas de jugadores */
-aside ol {
-    margin-left: 25px;
+/* LISTA DE JUGADORES */
+.lista_jugadores {
+    margin-left: 20px;
     margin-bottom: 15px;
 }
 
-/* Cada jugador */
-aside ol li {
-    padding: 5px 0;
+/* JUGADORES */
+.lista_jugadores li {
+    margin-bottom: 5px;
+    padding: 6px 10px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
-/* Efecto hover jugadores */
-aside ol li:hover {
-    color: white;
-    transform: translateX(5px);
-}
+/* EFECTO HOVER */
+.lista_jugadores li:hover {
+    color: var(--color_texto_claro);
+    background-color: var(--color_secundario);
+    transform: translateX(8px);
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);}
 
-/* ----- ESTILO TITULOS ----- */
+/* ===== FORMULARIO ===== */
 
-section ul li {
-    list-style: none;
-    background-color: #003366;
-    color: white;
-    padding: 10px 15px;
-    margin: 15px 0 5px 0;
-    border-radius: 6px;
-    font-weight: bold;
-    width: fit-content;
-}
-
-#tabla-titulos {
-    width: 80%;
-    margin: 40px 0 60px 240px;
-}
-
-section,
-#tabla-titulos {
-    margin-left: 220px;
-}
-/* ===== MENU LATERAL FIJO ===== */
-
-.menu-lateral {
-    position: fixed;
-    left: 0;
-    top: 120px;   /* donde empieza debajo del header */
-    width: 200px;
-
-    background-color: #e6e6e6;  /* gris */
-    padding: 15px 10px;
-    border-radius: 0 10px 10px 0;
-
-    height: auto;   /* IMPORTANTE */
-}
-
-.menu-lateral a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.menu-lateral a:hover {
-    background-color: #e0e0e0;
-}
-#tabla-titulos {
-    margin-left: 220px;
-}
-#tabla-titulos {
-    width: 100%;
-    margin: 40px 0 60px 0;  /* quitamos auto */
-    border-collapse: collapse;
-    background-color: white;
-    box-shadow: 0 5px 20px rgba(170, 55, 55, 0.15);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-
-/* ===== TABLA TITULOS ===== */
-.contenido {
-    margin-left: 200px;
-    padding: 20px;
-}
-
-/* Encabezado principal */
-#tabla-titulos thead tr:first-child {
-    background: linear-gradient(90deg, #0055aa, #0a60b6);
-    color: white;
-    font-size: 30px;
-}
-
-/* Segunda fila del encabezado */
-#tabla-titulos thead tr:nth-child(2) {
-    background-color: #216db9;
-    color: white;
-}
-
-/* Celdas */
-#tabla-titulos th,
-#tabla-titulos td {
-    padding: 12px;
+/* TITULO */
+.titulo_formulario {
+    color: var(--color_principal);
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Filas alternadas */
-#tabla-titulos tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+/* FORM */
+.formulario_pachuca {
+    max-width: 600px;
+    margin: auto;
 }
 
-/* Hover en filas */
-#tabla-titulos tbody tr:hover {
-    background-color: #ffeaea;
+/* FIELDSET */
+.grupo_formulario {
+    border: 2px solid var(--color_principal);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* LEGEND */
+.legend_formulario {
+    color: var(--color_principal);
+    font-weight: bold;
+}
+
+/* LABEL */
+.label_formulario {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.input_formulario,
+.textarea_formulario,
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* RADIO / CHECKBOX */
+.label_radio,
+.label_checkbox {
+    margin-right: 15px;
+}
+
+/* BOTON */
+.boton_formulario {
+    background-color: var(--color_principal);
+    color: var(--color_texto_claro);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-/* ----- PAGINA HISTORIA ----- */
-
-h1 {
-    margin: 30px 20px 10px 20px;
-    color: #003366;
+.boton_formulario:hover {
+    background-color: var(--color_secundario);
 }
 
-h3 {
-    margin: 30px 20px 10px 20px;
-    color: #ffeaea;
+/* ===== TABLA TITULOS ===== */
+
+.contenedor_tabla {
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--color_contenedor);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    overflow-x: auto;
 }
 
-h4 {
-    margin: 25px 20px 10px 20px;
-    color: #0055aa;
+.tabla_titulos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
 }
 
-p {
-    margin: 0 20px 20px 20px;
+/* ENCABEZADOS */
+.tabla_titulos th {
+    background-color: var(--color_principal);
+    color: var(--color_texto_claro);
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
-/* Separar tabla del margen izquierdo */
-table {
-    margin-left: 200px;
-    margin-top: 30px;
+/* CELDAS */
+.tabla_titulos td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
 }
 
-/* GRID SOLO PARA INDEX */
-
-.grid-index{
-display: grid;
-grid-template-columns: 3fr 1fr;
-gap: 20px;
-grid-auto-flow: dense;
+/* FILAS */
+.tabla_titulos tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.grid-index h2{
-grid-column: 2;
-margin-bottom: 5px;
+.tabla_titulos tbody tr:hover {
+    background-color: var(--color_acento);
+    transition: 0.3s;
 }
 
-.grid-index dl{
-grid-column: 2;
-margin-top: 0;
+/* COLUMNA EPOCA */
+.epoca {
+    font-weight: bold;
+    background-color: var(--color_datos);
+}
+/* COLUMNA anio */
+.anio {
+    font-weight: bold;
+    background-color: var(--color_datos2);
 }
 
-.grid-index p{
-grid-column: 1;
-font-size: 18px;
+/* ===== TITULOS ===== */
+
+
+/* MENU LATERAL FIJO */
+.menu_titulos {
+    position: sticky;
+    top: 100px;
+
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 200px;
+    height: fit-content;
 }
 
-.grid-index .fuego-container{
-grid-column: 1;
+.menu_link {
+    text-decoration: none;
+    color: var(--color_texto_claro);
+    background-color: var(--color_principal);
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu_link:hover {
+    background-color: var(--color_secundario);
+}
+
+/* SECCIONES */
+.seccion_titulos {
+    margin-bottom: 40px;
+    scroll-margin-top: 90px;
+    grid-column: 2;
+}
+
+.titulo_seccion {
+    color: var(--color_principal);
+    margin-bottom: 15px;
+    border-left: 5px solid var(--color_secundario);
+    padding-left: 10px;
+}
+
+/* LISTA */
+.lista_titulos {
+    list-style: none;
+}
+
+/* ITEM */
+.item_titulo {
+    font-weight: bold;
+    margin-top: 20px;
+    color: var(--color_secundario);
+}
+
+/* TEXTO */
+.parrafo_titulo {
+    margin: 10px 0 15px 0;
+    text-align: justify;
+}
+
+/* IMAGENES */
+.imagen_titulo {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 10px auto 25px auto;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
 }

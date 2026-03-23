@@ -6,34 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jugadores del Pachuca</title>
 </head>
-<body>
-    <header>
-        <h1>Wiki del Pachuca</h1>
+<body id="body_principal">
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="historia.html">Historia</a>
-            <a href="titulos.html">Titulos</a>
-            <a href="jugadores.html">Jugadores</a>
-            <a href="cuestionario.html">Cuestionario</a>
+    <header id="header_principal">
+        <h1 id="titulo_principal">Wiki del Pachuca</h1>
+
+        <nav id="nav_principal" class="nav_principal">
+            <a href="index.html" class="nav_link">Inicio</a>
+            <a href="historia.html" class="nav_link">Historia</a>
+            <a href="titulos.html" class="nav_link">Titulos</a>
+            <a href="jugadores.html" class="nav_link">Jugadores</a>
+            <a href="cuestionario.html" class="nav_link">Cuestionario</a>
         </nav>
     </header>
 
-    <main>
-        <p>Jugadores del plantel actual</p>
-        <img src="multimedia/plantel.jpg" alt="Plantel Actual del Pachuca" width="426" height="260">
+    <main id="main_jugadores" class="main_jugadores">
+        <p class="titulo_jugadores">Jugadores del plantel actual</p>
+        <img src="multimedia/plantel.jpg" alt="Plantel Actual del Pachuca" width="426" height="260" class="imagen_plantel">
     </main>
 
-    <aside>
-        <ul>
-            <li>Porteros</li>
-            <ol>
+    <aside id="aside_jugadores" class="aside_jugadores">
+        <ul class="lista_posiciones">
+
+            <li class="posicion">Porteros</li>
+            <ol class="lista_jugadores">
                 <li value="25">Carlos Moreno</li>
                 <li value="31">José Eulogio</li>
             </ol>
 
-            <li>Defensas</li>
-            <ol>
+            <li class="posicion">Defensas</li>
+            <ol class="lista_jugadores">
                 <li value="2">Sergio Barreto</li>
                 <li value="0">Andrés Micolta</li>
                 <li value="4">Eduardo Bauermann</li>
@@ -45,8 +47,8 @@
                 <li value="0">Luis Rodríguez</li>
             </ol>
 
-            <li>Centrocampistas</li>
-            <ol>
+            <li class="posicion">Centrocampistas</li>
+            <ol class="lista_jugadores">
                 <li value="28">Elías Montiel</li>
                 <li value="5">Pedro Pedraza</li>
                 <li value="16">Christian Rivera</li>
@@ -56,8 +58,8 @@
                 <li value="15">Israel Luna</li>
             </ol>
 
-            <li>Delanteros</li>
-            <ol>
+            <li class="posicion">Delanteros</li>
+            <ol class="lista_jugadores">
                 <li value="11">Oussama Idrissi</li>
                 <li value="29">Kenedy</li>
                 <li value="18">Alexéi Domínguez</li>
@@ -66,11 +68,15 @@
                 <li value="10">Enner Valencia</li>
                 <li value="23">Salomón Rondón</li>
             </ol>
+
         </ul>
     </aside>
 
-    <footer>
-        &copy; 2024 Wiki Del Pachuca. Todos los derechos reservados, HCM.
+    <footer id="footer_principal" class="footer_principal">
+        &copy; 2024 Wiki Del Pachuca.
+        <br>
+        Todos los derechos reservados, HCM.
     </footer>
+
 </body>
 </html>

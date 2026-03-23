@@ -5,78 +5,73 @@
     <meta charset="UTF-8">
     <title>Formulario - Club Pachuca</title>
 </head>
-<body>
+<body id="body_principal">
 
-    <header>
-        <h1>Wiki del Pachuca</h1>
+    <header id="header_principal">
+        <h1 id="titulo_principal">Wiki del Pachuca</h1>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="historia.html">Historia</a>
-            <a href="titulos.html">Titulos</a>
-            <a href="jugadores.html">Jugadores</a>
-            <a href="cuestionario.html">Cuestionario</a>
+        <nav id="nav_principal" class="nav_principal">
+            <a href="index.html" class="nav_link">Inicio</a>
+            <a href="historia.html" class="nav_link">Historia</a>
+            <a href="titulos.html" class="nav_link">Titulos</a>
+            <a href="jugadores.html" class="nav_link">Jugadores</a>
+            <a href="cuestionario.html" class="nav_link">Cuestionario</a>
         </nav>
     </header>
 
-    <main>
+    <main id="main_formulario" class="main_formulario">
 
-        <h1>Registro de Aficionados del Club Pachuca</h1>
+        <h1 class="titulo_formulario">Registro de Aficionados del Club Pachuca</h1>
 
-        <form action="#" method="post">
+        <form action="#" method="post" class="formulario_pachuca">
 
-            <fieldset>
-                <legend>Datos personales</legend>
+            <fieldset class="grupo_formulario">
+                <legend class="legend_formulario">Datos personales</legend>
 
-                <!-- Label explícito -->
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre" class="label_formulario">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required class="input_formulario">
                 <br><br>
 
-                <!---->
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
+                <label for="correo" class="label_formulario">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" required class="input_formulario">
                 <br><br>
 
-                <!---->
-                <label for="telefono">Número telefónico:</label>
-                <input type="tel" id="telefono" name="telefono">
+                <label for="telefono" class="label_formulario">Número telefónico:</label>
+                <input type="tel" id="telefono" name="telefono" class="input_formulario">
                 <br><br>
 
             </fieldset>
 
-            <fieldset>
-                <legend>Preferencias deportivas</legend>
+            <fieldset class="grupo_formulario">
+                <legend class="legend_formulario">Preferencias deportivas</legend>
 
-                <p>¿Desde cuándo eres aficionado?</p>
+                <p class="texto_formulario">¿Desde cuándo eres aficionado?</p>
 
-                <!-- Radio -->
-                <label>
-                    <input type="radio" name="antiguedad" value="menos5">
+                <label class="label_radio">
+                    <input type="radio" name="antiguedad" value="menos5" class="input_radio">
                     Menos de 5 años
                 </label>
 
-                <label>
-                    <input type="radio" name="antiguedad" value="mas5">
+                <label class="label_radio">
+                    <input type="radio" name="antiguedad" value="mas5" class="input_radio">
                     Más de 5 años
                 </label>
                 <br><br>
 
-                <p>¿Qué torneos sigues?</p>
+                <p class="texto_formulario">¿Qué torneos sigues?</p>
 
-                <!-- Checkbox -->
-                <label>
-                    <input type="checkbox" name="torneo" value="liga">
+                <label class="label_checkbox">
+                    <input type="checkbox" name="torneo" value="liga" class="input_checkbox">
                     Liga MX
                 </label>
 
-                <label>
-                    <input type="checkbox" name="torneo" value="concacaf">
+                <label class="label_checkbox">
+                    <input type="checkbox" name="torneo" value="concacaf" class="input_checkbox">
                     Concacaf
                 </label>
 
-                <label>
-                    <input type="checkbox" name="torneo" value="internacional">
+                <label class="label_checkbox">
+                    <input type="checkbox" name="torneo" value="internacional" class="input_checkbox">
                     Torneos Internacionales
                 </label>
 
@@ -84,12 +79,11 @@
 
             <br>
 
-            <fieldset>
-                <legend>Información adicional</legend>
+            <fieldset class="grupo_formulario">
+                <legend class="legend_formulario">Información adicional</legend>
 
-                <!-- Select -->
-                <label for="jugadorFavorito">Jugador favorito:</label>
-                <select id="jugadorFavorito" name="jugadorFavorito">
+                <label for="jugadorFavorito" class="label_formulario">Jugador favorito:</label>
+                <select id="jugadorFavorito" name="jugadorFavorito" class="input_formulario">
                     <option value="">Seleccione una opción</option>
                     <option value="idris">Oussama Idrissi</option>
                     <option value="valencia">Enner Valencia</option>
@@ -97,29 +91,28 @@
                 </select>
                 <br><br>
 
-                <!-- Textarea -->
-                <label for="comentarios">Comentarios sobre el club:</label>
+                <label for="comentarios" class="label_formulario">Comentarios sobre el club:</label>
                 <br>
-                <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="40" class="textarea_formulario"></textarea>
                 <br><br>
 
-                <!-- File con accept y capture -->
-                <label for="foto">Sube una foto con tu jersey del Pachuca para ganara una entrada al siguiente juego:</label>
-                <input type="file" id="foto" name="foto" accept="image/*" capture="environment">
+                <label for="foto" class="label_formulario">Sube una foto con tu jersey del Pachuca para ganara una entrada al siguiente juego:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" capture="environment" class="input_file">
 
             </fieldset>
 
             <br>
 
-            <input type="submit" value="Enviar formulario">
+            <input type="submit" value="Enviar formulario" class="boton_formulario">
 
         </form>
 
     </main>
 
-    <footer>
-        &copy; 2024 Wiki Del Pachuca. Todos los derechos reservados, HCM.
+    <footer id="footer_principal" class="footer_principal">
+        &copy; 2024 Wiki Del Pachuca.
+        <br>
+        Todos los derechos reservados, HCM.
     </footer>
-
 </body>
 </html>
