@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script>
+        if(localStorage.getItem("modo") === "oscuro"){
+            document.documentElement.classList.add("oscuro");
+        }
+    </script>
     <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <title>Formulario - Club Pachuca</title>
@@ -16,6 +21,7 @@
             <a href="titulos.html" class="nav_link">Titulos</a>
             <a href="jugadores.html" class="nav_link">Jugadores</a>
             <a href="cuestionario.html" class="nav_link">Cuestionario</a>
+            <button id="modoBtn" class="btn_modo">Visitante 🧡🖤</button>
         </nav>
     </header>
 
@@ -114,5 +120,7 @@
         <br>
         Todos los derechos reservados, HCM.
     </footer>
+
+    <script src="logica.js"></script>
 </body>
 </html>

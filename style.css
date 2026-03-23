@@ -1,22 +1,59 @@
-/* ===== VARIABLES GLOBALES ===== */
+/* ===== VARIABLES GLOBALES (REFACTOR) ===== */
 :root {
-    --color_principal: #003366;
-    --color_secundario: #0055aa;
-    --color_footer: #002244;
 
-    --color_fondo: #f2f6fc;
-    --color_contenedor: #ffffff;
+    /* ===== FONDOS ===== */
+    --bg_principal: #f2f6fc;
+    --bg_contenedor: #ffffff;
+    --bg_header: #003366;
+    --bg_footer: #002244;
+    --bg_secundario: #e6f0ff;
+    --bg_secundario_2: #f1f6ff;
 
-    --color_texto: #1a1a1a;
-    --color_texto_claro: #ffffff;
+    /* ===== TEXTO ===== */
+    --text_principal: #1a1a1a;
+    --text_secundario: #003366;
+    --text_claro: #ffffff;
 
-    --color_acento: #66ccff;
-    --color_datos: #e6f0ff;
-    --color_datos2: #f1f6ff;
+    /* ===== INTERACTIVOS ===== */
+    --accent: #38bdf8;
+    --accent_hover: #0ea5e9;
 
+    /* ===== BORDES ===== */
+    --border_principal: #003366;
+    --border_suave: #ccc;
+
+    /* ===== SOMBRA ===== */
     --sombra: 0px 4px 10px rgba(0,0,0,0.1);
 
+    /* ===== FUENTE ===== */
     --fuente_principal: Arial, sans-serif;
+}
+
+.oscuro {
+
+    /* ===== FONDOS ===== */
+    --bg_principal: #050505;
+    --bg_contenedor: #111111;
+    --bg_header: #0a0a0a;
+    --bg_footer: #000000;
+    --bg_secundario: #1a1a1a;
+    --bg_secundario_2: #141414;
+
+    /* ===== TEXTO ===== */
+    --text_principal: #ffb380;
+    --text_secundario: #ff7a00;
+    --text_claro: #ff7a00;
+
+    /* ===== INTERACTIVOS ===== */
+    --accent: #ff7a00;
+    --accent_hover: #ff5500;
+
+    /* ===== BORDES ===== */
+    --border_principal: #ff7a00;
+    --border_suave: #333;
+
+    /* ===== SOMBRA ===== */
+    --sombra: 0px 4px 15px rgba(0,0,0,0.8);
 }
 
 /* ===== RESET ===== */
@@ -29,14 +66,14 @@
 /* ===== BODY ===== */
 #body_principal {
     font-family: var(--fuente_principal);
-    background-color: var(--color_fondo);
-    color: var(--color_texto);
+    background-color: var(--bg_principal);
+    color: var(--text_principal);
     line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 #header_principal {
-    background-color: var(--color_principal);
+    background-color: var(--bg_header);
     padding: 10px;
 
     display: flex;
@@ -49,11 +86,11 @@
 }
 
 #titulo_principal {
-    color: var(--color_texto_claro);
+    color: var(--text_claro);
 }
 
 .nav_principal .nav_link {
-    color: var(--color_texto_claro);
+    color: var(--text_claro);
     text-decoration: none;
     margin: 0 15px;
     padding: 10px 15px;
@@ -62,7 +99,31 @@
 }
 
 .nav_principal .nav_link:hover {
-    background-color: var(--color_secundario);
+    background-color: var(--bg_header);
+    filter: brightness(1.2);
+}
+
+.btn_modo {
+    margin-left: auto;
+    padding: 6px 14px;
+
+    background-color: var(--accent);
+    color: var(--text_claro);
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-family: var(--fuente_principal);
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+.btn_modo:hover {
+    background-color: var(--accent_hover);
+    transform: scale(1.05);
 }
 
 /* ===== MAIN ===== */
@@ -74,7 +135,7 @@
 
     padding: 30px;
     margin: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
 }
@@ -82,9 +143,9 @@
 /* ===== DATOS ===== */
 .datos_index {
     grid-column: 2;
-    background-color: var(--color_datos);
+    background-color: var(--bg_secundario);
     padding: 20px;
-    border-left: 5px solid var(--color_principal);
+    border-left: 5px solid var(--border_principal);
     border-radius: 5px;
 }
 
@@ -107,6 +168,7 @@
     grid-column: 1;
     font-size: 18px;
     margin: 20px 0;
+    color: var(--text_principal);
 }
 
 /* ===== VISUAL ===== */
@@ -132,6 +194,7 @@
 .frase {
     font-size: 20px;
     font-weight: bold;
+    color: var(--text_secundario);
 }
 
 .escudo {
@@ -141,8 +204,8 @@
 
 /* ===== ASIDE ===== */
 .aside_principal {
-    background-color: var(--color_principal);
-    color: var(--color_texto_claro);
+    background-color: var(--bg_header);
+    color: var(--text_claro);
     padding: 25px;
     margin: 20px;
     border-radius: 10px;
@@ -150,6 +213,7 @@
 
 .aside_titulo {
     margin-bottom: 10px;
+    color: var(--text_claro);
 }
 
 .aside_lista {
@@ -157,7 +221,7 @@
 }
 
 .aside_link {
-    color: var(--color_acento);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -173,6 +237,7 @@
 .texto_leyenda {
     display: block;
     margin-top: 10px;
+    color: var(--text_principal);
 }
 
 .audio_leyenda {
@@ -195,8 +260,8 @@ video, audio {
 
 /* ===== FOOTER ===== */
 #footer_principal {
-    background-color: var(--color_footer);
-    color: var(--color_texto_claro);
+    background-color: var(--bg_footer);
+    color: var(--text_claro);
     text-align: center;
     padding: 20px;
     margin-top: 20px;
@@ -206,20 +271,20 @@ video, audio {
 #main_historia {
     padding: 30px;
     margin: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
 }
 
 /* TITULO */
 .titulo_historia {
-    color: var(--color_principal);
+    color: var(--text_secundario);
     margin-bottom: 20px;
 }
 
 /* SUBTITULOS */
 .subtitulo_historia {
-    color: var(--color_secundario);
+    color: var(--accent);
     margin-top: 25px;
     margin-bottom: 10px;
 }
@@ -228,6 +293,7 @@ video, audio {
 .parrafo_historia {
     margin-bottom: 20px;
     text-align: justify;
+    color: var(--text_principal);
 }
 
 /* ===== JUGADORES ===== */
@@ -235,7 +301,7 @@ video, audio {
 #main_jugadores {
     padding: 30px;
     margin: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
     text-align: center;
@@ -244,7 +310,7 @@ video, audio {
 .titulo_jugadores {
     font-size: 22px;
     font-weight: bold;
-    color: var(--color_principal);
+    color: var(--text_secundario);
     margin-bottom: 20px;
 }
 
@@ -258,8 +324,8 @@ video, audio {
 .aside_jugadores {
     margin: 20px;
     padding: 20px;
-    background-color: var(--color_principal);
-    color: var(--color_texto_claro);
+    background-color: var(--bg_header);
+    color: var(--text_claro);
     border-radius: 10px;
 }
 
@@ -274,6 +340,7 @@ video, audio {
     font-size: 18px;
     margin-top: 15px;
     margin-bottom: 5px;
+    color: var(--text_claro);
 }
 
 /* LISTA DE JUGADORES */
@@ -285,8 +352,6 @@ video, audio {
 /* JUGADORES */
 .lista_jugadores li {
     margin-bottom: 5px;
-}
-.lista_jugadores li {
     padding: 6px 10px;
     transition: all 0.3s ease;
     border-radius: 5px;
@@ -294,10 +359,10 @@ video, audio {
 
 /* EFECTO HOVER */
 .lista_jugadores li:hover {
-    color: var(--color_texto_claro);
-    background-color: var(--color_secundario);
+    color: var(--text_claro);
+    background-color: var(--bg_header);
     transform: translateX(8px);
-    box-shadow: 0px 3
+    box-shadow: var(--sombra);
 }
 
 /* ===== FORMULARIO ===== */
@@ -305,14 +370,14 @@ video, audio {
 #main_formulario {
     padding: 30px;
     margin: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
 }
 
 /* TITULO */
 .titulo_formulario {
-    color: var(--color_principal);
+    color: var(--text_secundario);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -325,7 +390,7 @@ video, audio {
 
 /* FIELDSET */
 .grupo_formulario {
-    border: 2px solid var(--color_principal);
+    border: 2px solid var(--border_principal);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -333,7 +398,7 @@ video, audio {
 
 /* LEGEND */
 .legend_formulario {
-    color: var(--color_principal);
+    color: var(--text_secundario);
     font-weight: bold;
 }
 
@@ -342,6 +407,7 @@ video, audio {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--text_principal);
 }
 
 /* INPUTS */
@@ -351,20 +417,23 @@ select {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border_suave);
     margin-bottom: 10px;
+    background-color: var(--bg_contenedor);
+    color: var(--text_principal);
 }
 
 /* RADIO / CHECKBOX */
 .label_radio,
 .label_checkbox {
     margin-right: 15px;
+    color: var(--text_principal);
 }
 
 /* BOTON */
 .boton_formulario {
-    background-color: var(--color_principal);
-    color: var(--color_texto_claro);
+    background-color: var(--accent);
+    color: var(--text_claro);
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -373,7 +442,7 @@ select {
 }
 
 .boton_formulario:hover {
-    background-color: var(--color_secundario);
+    background-color: var(--accent_hover);
 }
 
 /* ===== TABLA TITULOS ===== */
@@ -381,7 +450,7 @@ select {
 .contenedor_tabla {
     margin: 20px;
     padding: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
     overflow-x: auto;
@@ -396,51 +465,58 @@ select {
 
 /* ENCABEZADOS */
 .tabla_titulos th {
-    background-color: var(--color_principal);
-    color: var(--color_texto_claro);
+    background-color: var(--bg_header);
+    color: var(--text_claro);
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border_suave);
 }
 
 /* CELDAS */
 .tabla_titulos td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border_suave);
     vertical-align: middle;
+    color: var(--text_principal);
 }
 
 /* FILAS */
 .tabla_titulos tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--bg_secundario_2);
 }
 
 .tabla_titulos tbody tr:hover {
-    background-color: var(--color_acento);
+    background-color: var(--accent);
+    color: var(--text_claro);
     transition: 0.3s;
 }
 
 /* COLUMNA EPOCA */
 .epoca {
     font-weight: bold;
-    background-color: var(--color_datos);
+    background-color: var(--bg_secundario);
 }
-/* COLUMNA anio */
+
+/* COLUMNA ANIO */
 .anio {
     font-weight: bold;
-    background-color: var(--color_datos2);
+    background-color: var(--bg_secundario_2);
 }
 
 /* ===== TITULOS ===== */
 
 #main_titulos {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+
     padding: 30px;
     margin: 20px;
-    background-color: var(--color_contenedor);
+    background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
 }
 
-/* MENU LATERAL FIJO */
+/* MENU LATERAL */
 .menu_titulos {
     position: sticky;
     top: 100px;
@@ -457,27 +533,28 @@ select {
 
 .menu_link {
     text-decoration: none;
-    color: var(--color_texto_claro);
-    background-color: var(--color_principal);
+    color: var(--text_claro);
+    background-color: var(--bg_header);
     padding: 10px 15px;
     border-radius: 6px;
     transition: 0.3s;
 }
 
 .menu_link:hover {
-    background-color: var(--color_secundario);
+    background-color: var(--accent);
 }
 
 /* SECCIONES */
 .seccion_titulos {
+    grid-column: 2;
     margin-bottom: 40px;
     scroll-margin-top: 90px;
 }
 
 .titulo_seccion {
-    color: var(--color_principal);
+    color: var(--text_secundario);
     margin-bottom: 15px;
-    border-left: 5px solid var(--color_secundario);
+    border-left: 5px solid var(--accent);
     padding-left: 10px;
 }
 
@@ -490,13 +567,14 @@ select {
 .item_titulo {
     font-weight: bold;
     margin-top: 20px;
-    color: var(--color_secundario);
+    color: var(--accent);
 }
 
 /* TEXTO */
 .parrafo_titulo {
     margin: 10px 0 15px 0;
     text-align: justify;
+    color: var(--text_principal);
 }
 
 /* IMAGENES */
@@ -507,20 +585,4 @@ select {
     margin: 10px auto 25px auto;
     border-radius: 10px;
     box-shadow: var(--sombra);
-}
-
-#main_titulos {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 30px;
-
-    padding: 30px;
-    margin: 20px;
-    background-color: var(--color_contenedor);
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-}
-
-.seccion_titulos {
-    grid-column: 2;
 }
