@@ -24,7 +24,7 @@
             <a href="titulos.html" class="nav_link">Titulos</a>
             <a href="jugadores.html" class="nav_link">Jugadores</a>
             <a href="cuestionario.html" class="nav_link">Cuestionario</a>
-            <button id="modoBtn" class="btn_modo">Visitante 🧡🖤</button>
+            <button id="modoBtn" class="btn_modo" onclick="modo_oscuro()"></button>
         </nav>
     </header>
 
@@ -33,7 +33,7 @@
 
         <!-- DATOS -->
         <dl id="datos_index" class="datos_index">
-            <h2 class="titulo_datos">Datos básicos del Club Pachuca</h2>
+            <h2 class="titulo_datos">Datos básicos del club</h2>
 
             <dt class="dato_titulo">Fundación</dt>
             <dd class="dato_descripcion">1 de noviembre de 1892</dd>
@@ -46,16 +46,38 @@
 
             <dt class="dato_titulo">Apodo</dt>
             <dd class="dato_descripcion">Tuzos</dd>
+            
+            
+            <dt class="dato_titulo">Jerseys</dt>
+            <figure>
+                <img src="multimedia/home-kit.webp" class="playera_index" onclick="ponerClaro()">
+                <dd class="dato_descripcion">Local</dd>
+            </figure>
+
+            <figure>
+                <img src="multimedia/away-kit..jpg" class="playera_index" onclick="ponerOscuro()">
+                <dd class="dato_descripcion">Visitante</dd>
+            </figure>
+
+            <div class="bloque_jugadores">
+                <p>Menciona a tus jugadores favoritos</p>
+                <ul id="lista"></ul>
+                <input type="text" id="tarea">
+                <button id="btnAgregar" onclick="agregar()">Agregar</button>
+            </div>
         </dl>
 
         <!-- DESCRIPCIÓN -->
-        <p id="descripcion_index" class="descripcion_index">
-            El Club de Fútbol Pachuca es un club profesional de fútbol con sede en la ciudad de Pachuca, capital del Estado de Hidalgo, que actualmente participa en la Primera División de México, en la cual permanece desde 1998. Fundado el 1 de noviembre de 1892 con el nombre de Pachuca Football Club por trabajadores de la compañía minera Real del Monte y Pachuca, es el equipo más antiguo del fútbol mexicano. Disputa sus juegos de local en el Estadio Hidalgo desde 1993, y es el club con más escuelas de fútbol en México.
-
-            Cuenta en su palmarés con 7 títulos nacionales y 9 internacionales, al ganar siete veces la Primera División de México, seis veces la Copa de Campeones de la Concacaf, una Copa Sudamericana en 2006, siendo el único club Mexicano y del mundo en ganar un torneo continental oficial fuera de la confederación a la que pertenece. También conquistó el Derbi de las Américas y la Copa Challenger dentro de la primera edición de la Copa Intercontinental de la FIFA en 2024, convirtiéndose en el primer club Mexicano y de Concacaf en ganar un título organizado directamente por la FIFA.
-
-            A su vez, es el primer club mexicano en haber participado en cuatro ocasiones en la Copa Mundial de Clubes de la FIFA, firmando su mejor actuación en 2017 al obtener el tercer lugar e igualando la segunda mejor actuación de un equipo Mexicano y de la Concacaf en esta competición.
-        </p>
+        <div id="descripcion_index" class="descripcion_index">
+            <h2 class="titulo_seccion">Pachuca FC "Los Tuzos"</h2>
+            <p>
+                El Club de Fútbol Pachuca es un club profesional de fútbol con sede en la ciudad de Pachuca, capital del Estado de Hidalgo, que actualmente participa en la Primera División de México, en la cual permanece desde 1998. Fundado el 1 de noviembre de 1892 con el nombre de Pachuca Football Club por trabajadores de la compañía minera Real del Monte y Pachuca, es el equipo más antiguo del fútbol mexicano. Disputa sus juegos de local en el Estadio Hidalgo desde 1993, y es el club con más escuelas de fútbol en México.
+                <br><br>
+                Cuenta en su palmarés con 7 títulos nacionales y 9 internacionales, al ganar siete veces la Primera División de México, seis veces la Copa de Campeones de la Concacaf, una Copa Sudamericana en 2006, siendo el único club Mexicano y del mundo en ganar un torneo continental oficial fuera de la confederación a la que pertenece. También conquistó el Derbi de las Américas y la Copa Challenger dentro de la primera edición de la Copa Intercontinental de la FIFA en 2024, convirtiéndose en el primer club Mexicano y de Concacaf en ganar un título organizado directamente por la FIFA.
+                <br><br>
+                A su vez, es el primer club mexicano en haber participado en cuatro ocasiones en la Copa Mundial de Clubes de la FIFA, firmando su mejor actuación en 2017 al obtener el tercer lugar e igualando la segunda mejor actuación de un equipo Mexicano y de la Concacaf en esta competición.
+            </p>
+        </div>
 
         <!-- VISUAL -->
         <div id="visual_index" class="visual_index">
@@ -79,60 +101,77 @@
     <!-- ASIDE -->
     <aside id="aside_principal" class="aside_principal">
 
-        <h3 class="aside_titulo">Si deseas mas información, visita las paginas oficiales del club.</h3>
-        <ul class="aside_lista">
-            <li><a href="https://tuzos.com.mx/" target="_blank" class="aside_link">Sitio Oficial del Club Pachuca</a></li>
-            <li><a href="https://www.facebook.com/ClubPachucaTuzos" target="_blank" class="aside_link">Facebook Oficial del Club Pachuca</a></li>
-            <li><a href="https://twitter.com/tuzos" target="_blank" class="aside_link">Twitter Oficial del Club Pachuca</a></li>
-            <li><a href="https://www.instagram.com/tuzosoficial/?hl=es" target="_blank" class="aside_link">Instagram Oficial del Club Pachuca</a></li>
-            <li><a href="https://www.youtube.com/user/tuzostvoficial" target="_blank" class="aside_link">YouTube Oficial del Club Pachuca</a></li>
-            <li><a href="https://www.tuzomania.mx/" target="_blank" class="aside_link">Tienda Oficial del Club Pachuca</a></li>
-        </ul>
+        <div class="lado_izquierdo">
 
-        <h3 class="aside_titulo">Si deseas obtener un wallpaper exclusivo, dale click al siguiente enlace.</h3>
+            <figure id="leyenda" class="leyenda">
+                <h3 class="aside_titulo">Leyenda del Pachuca</h3>
+                <img src="multimedia/calero.webp" alt="Miguel Calero" class="imagen_leyenda">
+                <cite class="texto_leyenda">
+                    Si volviera a nacer me llamaria Miguel Calero seria portero y defenderia a huebo los colores del pachuca
+                </cite>
+            </figure>
 
-        <figure id="leyenda" class="leyenda">
+            <audio controls class="audio_leyenda">
+                <source src="multimedia/si volviera a nacer.mp3" type="audio/mpeg">
+            </audio>
+
+            <h3 class="aside_titulo">Himno oficial del Pachuca</h3>
+            <video controls width="600" poster="multimedia/miniatura.avif" class="video_himno">
+                <source src="multimedia/himno.mp4" type="video/mp4">
+            </video>
+
+
+        </div>
+
+        <div class="lado_derecho">
+            <h3 class="aside_titulo">Si deseas obtener un wallpaper exclusivo, dale click al siguiente enlace.</h3>
+
+            
+            <img src="multimedia/wallpapertuzos.jpg" width="30%" alt="Wallpaper exclusivo" class="wallpaper">
+
             <a href="multimedia/wallpapertuzos.zip" download class="aside_link">Wallpaper exclusivo</a>
 
-            <br>
 
-            <h3 class="aside_titulo">Leyenda del Pachuca</h3>
-            <img src="multimedia/calero.webp" alt="Miguel Calero" class="imagen_leyenda">
+            <h3 class="aside_titulo">Si deseas mas información, visita las paginas oficiales del club.</h3>
+            <ul class="aside_lista">
+                <li><a href="https://tuzos.com.mx/" target="_blank" class="aside_link">Sitio Oficial del Club Pachuca</a></li>
+                <li><a href="https://www.facebook.com/ClubPachucaTuzos" target="_blank" class="aside_link">Facebook Oficial del Club Pachuca</a></li>
+                <li><a href="https://twitter.com/tuzos" target="_blank" class="aside_link">Twitter Oficial del Club Pachuca</a></li>
+                <li><a href="https://www.instagram.com/tuzosoficial/?hl=es" target="_blank" class="aside_link">Instagram Oficial del Club Pachuca</a></li>
+                <li><a href="https://www.youtube.com/user/tuzostvoficial" target="_blank" class="aside_link">YouTube Oficial del Club Pachuca</a></li>
+                <li><a href="https://www.tuzomania.mx/" target="_blank" class="aside_link">Tienda Oficial del Club Pachuca</a></li>
+            </ul>
 
-            <br>
 
-            <cite class="texto_leyenda">
-                Si volviera a nacer me llamaria Miguel Calero seria portero y defenderia a huebo los colores del pachuca
-            </cite>
-        </figure>
+            <h3 class="aside_titulo"></h3>Contactanos</h3>
+            <ul class="aside_lista contactos">
+                <li><a href="mailto:contacto@tuzos.com.mx" class="aside_link">Correo</a></li>
+                <li><a href="tel:+527717000000" class="aside_link">Telefono</a></li>
+                <li>
+                <a href="https://es.wikipedia.org/wiki/Club_de_F%C3%BAtbol_Pachuca"
+                    target="_blank"
+                    rel="author"
+                    class="aside_link">
+                    Wikipedia
+                </a>
+                </li>
+            </ul>
 
-        <audio controls class="audio_leyenda">
-            <source src="multimedia/si volviera a nacer.mp3" type="audio/mpeg">
-        </audio>
+        </div>
+
+       
+
+
+        
 
         <br><br>
 
-        <h3 class="aside_titulo">Himno oficial del Pachuca</h3>
+        
 
-        <video controls width="600" poster="multimedia/miniatura.avif" class="video_himno">
-            <source src="multimedia/himno.mp4" type="video/mp4">
-        </video>
-
-        <h3 class="aside_titulo">Contactanos</h3>
-        <ul class="aside_lista">
-            <li><a href="mailto:contacto@tuzos.com.mx" class="aside_link">Correo</a></li>
-            <li><a href="tel:+527717000000" class="aside_link">Telefono</a></li>
-            <li>
-                <a href="https://es.wikipedia.org/wiki/Club_de_F%C3%BAtbol_Pachuca"
-                target="_blank"
-                rel="author"
-                class="aside_link">
-                Tambien nos encuentras en Wikipedia
-                </a>
-            </li>
-        </ul>
-
+        
     </aside>
+    
+    <button id="arriba">⬆</button>
 
     <!-- FOOTER -->
     <footer id="footer_principal" class="footer_principal">
@@ -140,7 +179,7 @@
         <br>
         Todos los derechos reservados, HCM.
     </footer>
-
+    
     <script src="logica.js"></script>
 </body>
 </html>

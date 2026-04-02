@@ -21,7 +21,7 @@
             <a href="titulos.html" class="nav_link">Titulos</a>
             <a href="jugadores.html" class="nav_link">Jugadores</a>
             <a href="cuestionario.html" class="nav_link">Cuestionario</a>
-            <button id="modoBtn" class="btn_modo">Visitante 🧡🖤</button>
+            <button id="modoBtn" class="btn_modo" onclick="modo_oscuro()"></button>
         </nav>
     </header>
 
@@ -35,11 +35,11 @@
                 <legend class="legend_formulario">Datos personales</legend>
 
                 <label for="nombre" class="label_formulario">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required class="input_formulario">
+                <input type="text" id="nombre" name="nombre"  class="input_formulario">
                 <br><br>
 
                 <label for="correo" class="label_formulario">Correo electrónico:</label>
-                <input type="email" id="correo" name="correo" required class="input_formulario">
+                <input type="email" id="correo" name="correo"  class="input_formulario">
                 <br><br>
 
                 <label for="telefono" class="label_formulario">Número telefónico:</label>
@@ -81,6 +81,8 @@
                     Torneos Internacionales
                 </label>
 
+                <p id="mensaje_checkbox" class="parrafo_historia"></p>
+
             </fieldset>
 
             <br>
@@ -95,6 +97,8 @@
                     <option value="valencia">Enner Valencia</option>
                     <option value="rondon">Salomón Rondón</option>
                 </select>
+                <input type="text" id="otroJugador" class="input_formulario" placeholder="Otro jugador">
+                <button type="button" id="btnAgregarJugador">Agregar</button>
                 <br><br>
 
                 <label for="comentarios" class="label_formulario">Comentarios sobre el club:</label>
@@ -102,18 +106,21 @@
                 <textarea id="comentarios" name="comentarios" rows="4" cols="40" class="textarea_formulario"></textarea>
                 <br><br>
 
-                <label for="foto" class="label_formulario">Sube una foto con tu jersey del Pachuca para ganara una entrada al siguiente juego:</label>
-                <input type="file" id="foto" name="foto" accept="image/*" capture="environment" class="input_file">
+                <label for="foto" class="label_file">Seleccionar archivo</label>
+                <input type="file" id="foto" class="input_file">
 
             </fieldset>
 
             <br>
 
             <input type="submit" value="Enviar formulario" class="boton_formulario">
+            <p id="mensaje" class="parrafo_historia"></p>
 
         </form>
 
     </main>
+
+    <button id="arriba">⬆</button>
 
     <footer id="footer_principal" class="footer_principal">
         &copy; 2024 Wiki Del Pachuca.

@@ -22,13 +22,21 @@
             <a href="titulos.html" class="nav_link">Titulos</a>
             <a href="jugadores.html" class="nav_link">Jugadores</a>
             <a href="cuestionario.html" class="nav_link">Cuestionario</a>
-            <button id="modoBtn" class="btn_modo">Visitante 🧡🖤</button>
+            <button id="modoBtn" class="btn_modo" onclick="modo_oscuro()"></button>
         </nav>
     </header>
 
     <main id="main_jugadores" class="main_jugadores">
         <p class="titulo_jugadores">Jugadores del plantel actual</p>
-        <img src="multimedia/plantel.jpg" alt="Plantel Actual del Pachuca" width="426" height="260" class="imagen_plantel">
+        <img id="principal" src="multimedia/foto_basica.jpeg" alt="Foto Seleccionada" width="580" height="360" class="imagen_principal">
+        <br>
+        <img src="multimedia/plantel.jpg" alt="Plantel Actual del Pachuca" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_1.jpeg" alt="Foto 1" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_2.png" alt="Foto 2" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_3.jpg" alt="Foto 3" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_4.jpg" alt="Foto 4" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_5.jpg" alt="Foto 5" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
+        <img src="multimedia/plantel_6.jpg" alt="Foto 6" width="120" height="80" class="imagen_secundaria" onclick="cambiar(this)">
     </main>
 
     <aside id="aside_jugadores" class="aside_jugadores">
@@ -36,47 +44,49 @@
 
             <li class="posicion">Porteros</li>
             <ol class="lista_jugadores">
-                <li value="25">Carlos Moreno</li>
-                <li value="31">José Eulogio</li>
+                <li value="25">Carlos Moreno            </li>
+                <li value="31">José Eulogio            </li>
             </ol>
 
             <li class="posicion">Defensas</li>
             <ol class="lista_jugadores">
-                <li value="2">Sergio Barreto</li>
-                <li value="0">Andrés Micolta</li>
-                <li value="4">Eduardo Bauermann</li>
-                <li value="13">Jorge Berlanga</li>
-                <li value="35">Pedro Martínez</li>
-                <li value="22">Alan Mozo</li>
-                <li value="12">Brian García</li>
-                <li value="14">Carlos Sánchez</li>
-                <li value="0">Luis Rodríguez</li>
+                <li value="2">Sergio Barreto            </li>
+                <li value="0">Andrés Micolta            </li>
+                <li value="4">Eduardo Bauermann            </li>
+                <li value="13">Jorge Berlanga            </li>
+                <li value="35">Pedro Martínez            </li>
+                <li value="22">Alan Mozo            </li>
+                <li value="12">Brian García            </li>
+                <li value="14">Carlos Sánchez            </li>
+                <li value="0">Luis Rodríguez            </li>
             </ol>
 
             <li class="posicion">Centrocampistas</li>
             <ol class="lista_jugadores">
-                <li value="28">Elías Montiel</li>
-                <li value="5">Pedro Pedraza</li>
-                <li value="16">Christian Rivera</li>
-                <li value="26">Alán Bautista</li>
-                <li value="8">Víctor Guzmán</li>
-                <li value="34">Sergio Hernández</li>
-                <li value="15">Israel Luna</li>
+                <li value="28">Elías Montiel            </li>
+                <li value="5">Pedro Pedraza            </li>
+                <li value="16">Christian Rivera            </li>
+                <li value="26">Alán Bautista            </li>
+                <li value="8">Víctor Guzmán            </li>
+                <li value="34">Sergio Hernández            </li>
+                <li value="15">Israel Luna            </li>
             </ol>
 
             <li class="posicion">Delanteros</li>
             <ol class="lista_jugadores">
-                <li value="11">Oussama Idrissi</li>
-                <li value="29">Kenedy</li>
-                <li value="18">Alexéi Domínguez</li>
-                <li value="7">Luis Quiñónes</li>
-                <li value="99">Jhonder Cádiz</li>
-                <li value="10">Enner Valencia</li>
+                <li value="11">Oussama Idrissi            </li>
+                <li value="29">Kenedy            </li>
+                <li value="18">Alexéi Domínguez            </li>
+                <li value="7">Luis Quiñónes            </li>
+                <li value="99">Jhonder Cádiz            </li>
+                <li value="10">Enner Valencia            </li>
                 <li value="23">Salomón Rondón</li>
             </ol>
 
         </ul>
     </aside>
+
+    <button id="arriba">⬆</button>
 
     <footer id="footer_principal" class="footer_principal">
         &copy; 2024 Wiki Del Pachuca.

@@ -12,6 +12,7 @@
     /* ===== TEXTO ===== */
     --text_principal: #1a1a1a;
     --text_secundario: #003366;
+    --text_terciario: #007acc;
     --text_claro: #ffffff;
 
     /* ===== INTERACTIVOS ===== */
@@ -34,7 +35,7 @@
     /* ===== FONDOS ===== */
     --bg_principal: #050505;
     --bg_contenedor: #111111;
-    --bg_header: #0a0a0a;
+    --bg_header: #0e0e0e;
     --bg_footer: #000000;
     --bg_secundario: #1a1a1a;
     --bg_secundario_2: #141414;
@@ -42,11 +43,12 @@
     /* ===== TEXTO ===== */
     --text_principal: #ffb380;
     --text_secundario: #ff7a00;
+    --text_terciario: #ff7a00;
     --text_claro: #ff7a00;
-
+  
     /* ===== INTERACTIVOS ===== */
-    --accent: #ff7a00;
-    --accent_hover: #ff5500;
+    --accent: #d16500a4;
+    --accent_hover: #d1650080;
 
     /* ===== BORDES ===== */
     --border_principal: #ff7a00;
@@ -100,10 +102,14 @@
 
 .nav_principal .nav_link:hover {
     background-color: var(--bg_header);
-    filter: brightness(1.2);
+    filter: brightness(1.6);
 }
 
 .btn_modo {
+    /*tamanio boton*/
+    width: 140px;
+    height: 40px;
+
     margin-left: auto;
     padding: 6px 14px;
 
@@ -126,10 +132,104 @@
     transform: scale(1.05);
 }
 
+.playera_index {
+    width: 175px;
+    height: 175px;
+    margin: 10px 0;
+}
+
+.datos_index figure {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.datos_index figure {
+  display: inline-block;
+  margin: 0 5px; /* 👈 aquí las “pegas” */
+}
+
+/* ===== LISTA JUGADORES FAVORITOS (NUEVO) ===== */
+
+
+/* TITULO */
+.bloque_jugadores p {
+    font-weight: bold;
+    color: var(--text_principal);
+}
+
+/* INPUT + BOTON */
+.bloque_jugadores input {
+    width: 70%;
+    padding: 8px;
+
+    border-radius: 6px;
+    border: 1px solid var(--border_suave);
+
+    background-color: var(--bg_contenedor);
+    color: var(--text_principal);
+}
+
+.bloque_jugadores button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+
+    background-color: var(--accent);
+    color: var(--text_claro);
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.bloque_jugadores button:hover {
+    background-color: var(--accent_hover);
+}
+
+/* LISTA */
+#lista {
+    list-style: disc;
+    margin-left: 20px;
+
+    text-align: left;
+    direction: ltr;
+
+    width: 100%;
+}
+
+/* ITEMS */
+#lista li {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    transition: 0.2s;
+}
+
+/* HOVER */
+#lista li:hover {
+    transform: translateX(5px);
+    color: var(--text_claro);
+}
+
+#main_index {
+  display: grid;
+  grid-template-columns: 2.8fr 1.2fr;
+  grid-template-areas:
+    "descripcion datos"
+    "visual datos";
+  gap: 20px;
+  align-items: start;
+}
+
+.descripcion_index { grid-area: descripcion; }
+.visual_index { grid-area: visual; }
+.datos_index { grid-area: datos; }
+
 /* ===== MAIN ===== */
 #main_index {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.8fr 1.2fr;
     gap: 20px;
     grid-auto-flow: dense;
 
@@ -204,11 +304,25 @@
 
 /* ===== ASIDE ===== */
 .aside_principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
     background-color: var(--bg_header);
     color: var(--text_claro);
     padding: 25px;
     margin: 20px;
     border-radius: 10px;
+}
+
+.lado_izquierdo,
+.lado_derecho {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.lado_derecho{
+    align-items: flex-end;
 }
 
 .aside_titulo {
@@ -218,6 +332,21 @@
 
 .aside_lista {
     margin-bottom: 20px;
+    list-style-position: none;
+    text-align: right;
+}
+
+.aside_lista li {
+    direction: rtl;
+}
+
+.contactos {
+    display: flex;
+    gap: 33px;
+}
+
+.contactos li {
+    direction: ltr;
 }
 
 .aside_link {
@@ -237,7 +366,7 @@
 .texto_leyenda {
     display: block;
     margin-top: 10px;
-    color: var(--text_principal);
+    color: var(--accent);
 }
 
 .audio_leyenda {
@@ -274,6 +403,10 @@ video, audio {
     background-color: var(--bg_contenedor);
     border-radius: 10px;
     box-shadow: var(--sombra);
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
 /* TITULO */
@@ -284,7 +417,7 @@ video, audio {
 
 /* SUBTITULOS */
 .subtitulo_historia {
-    color: var(--accent);
+    color: var(--text_terciario);
     margin-top: 25px;
     margin-bottom: 10px;
 }
@@ -294,6 +427,80 @@ video, audio {
     margin-bottom: 20px;
     text-align: justify;
     color: var(--text_principal);
+}
+
+.leyendas_historia {
+    display: none;
+}
+
+.contenedor_carrusel {
+    position: relative;
+    display: inline-block;
+}
+
+/* BOTONES EXISTENTES */
+.botonesDireccionales {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 60px;
+
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text_claro);
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20%;
+
+    transition: 0.25s;
+
+}
+
+.zona_imagen {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+/* IZQUIERDA */
+#boton_regresar {
+    left: 0;
+}
+
+/* DERECHA */
+#boton_siguiente {
+    right: 0;
+}
+
+/* HOVER */
+.botonesDireccionales:hover {
+    background-color: var(--accent_hover);
+}
+
+.contenedor_carrusel {
+    text-align: center;
+}
+
+.nombres_leyenda {
+    margin-top: 12px;
+    text-align: center;
+
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    color: var(--text_secundario);
+
+    padding: 6px 10px;
+    border-radius: 6px;
 }
 
 /* ===== JUGADORES ===== */
@@ -314,9 +521,55 @@ video, audio {
     margin-bottom: 20px;
 }
 
-.imagen_plantel {
+.imagen_principal {
     border-radius: 10px;
     box-shadow: var(--sombra);
+}
+
+.imagen_secundaria {
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    margin: 5px;
+}
+.imagen_secundaria:hover{
+    transform: scale(1.15);
+    filter: brightness(0.8);
+    transition: 0.3s;
+}
+
+.btn_like,
+.btn_dislike {
+    border: none;
+    padding: 4px 8px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+
+    background-color: var(--bg_secundario);
+    color: var(--text_principal);
+
+    transition: all 0.25s ease;
+}
+
+.btn_dislike{
+    background-color: red;
+}
+
+.btn_like{
+    background-color: green;
+}
+
+/* LIKE */
+.btn_like:hover {
+    background-color: var(--accent);
+    color: var(--text_claro);
+}
+
+/* DISLIKE */
+.btn_dislike:hover {
+    background-color: var(--accent_hover);
+    color: var(--text_claro);
 }
 
 /* ===== ASIDE JUGADORES ===== */
@@ -444,6 +697,69 @@ select {
 .boton_formulario:hover {
     background-color: var(--accent_hover);
 }
+/* BOTON AGREGAR (MISMO ESTILO INPUT) */
+#btnAgregarJugador {
+    width: 20%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border_suave);
+    background-color: var(--bg_contenedor);
+    color: var(--text_principal);
+    font-family: var(--fuente_principal);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#btnAgregarJugador:hover {
+    background-color: var(--accent);
+    color: var(--text_claro);
+    border-color: var(--accent);
+}
+
+/* ocultar input real */
+.input_file {
+    display: none;
+}
+
+/* botón visual */
+.label_file {
+    display: block;
+    width: 45%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border_suave);
+    background-color: var(--bg_contenedor);
+    color: var(--text_principal);
+    cursor: pointer;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.label_file:hover {
+    background-color: var(--accent);
+    color: var(--text_claro);
+}
+
+/* RADIO */
+.input_radio {
+    accent-color: var(--accent);
+    transform: scale(1.4);
+    margin-right: 8px;
+}
+
+/* CHECKBOX */
+.input_checkbox {
+    accent-color: var(--accent);
+    transform: scale(1.4);
+    margin-right: 8px;
+}
+
+.label_radio,
+.label_checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
 
 /* ===== TABLA TITULOS ===== */
 
@@ -567,7 +883,7 @@ select {
 .item_titulo {
     font-weight: bold;
     margin-top: 20px;
-    color: var(--accent);
+    color: var(--text_terciario);
 }
 
 /* TEXTO */
@@ -585,4 +901,32 @@ select {
     margin: 10px auto 25px auto;
     border-radius: 10px;
     box-shadow: var(--sombra);
+}
+
+#arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 35px;
+    border-radius: 30%;
+    
+    background-color: var(--accent);
+    color: var(--text_claro);
+    font-size: 24px;
+
+    border: none;
+    outline: none;
+    
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+/* hover */
+#arriba:hover {
+    background-color: var(--accent_hover);
 }
