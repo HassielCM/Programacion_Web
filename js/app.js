@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/jerseys';
+const API_URL = 'https://programacion-web-paau.onrender.com/api/jerseys';
 
 let jerseys = [];
 let modoEdicion = false;
