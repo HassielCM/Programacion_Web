@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <!-- MODO OSCURO -->
+    <script>
+        if(localStorage.getItem("modo") === "oscuro"){
+            document.documentElement.classList.add("oscuro");
+        }
+    </script>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Pachuca</title>
+</head>
+
+<body id="body_principal">
+
+    <div id="toast" class="toast"></div>
+    <!-- HEADER -->
+    <header id="header_principal">
+        <h1 id="titulo_principal">Wiki del Pachuca</h1>
+
+        <nav id="nav_principal" class="nav_principal">
+            <a href="index.html" class="nav_link">Inicio</a>
+            <a href="historia.html" class="nav_link">Historia</a>
+            <a href="titulos.html" class="nav_link">Titulos</a>
+            <a href="jugadores.html" class="nav_link">Jugadores</a>
+            <a href="cuestionario.html" class="nav_link">Cuestionario</a>
+            <a href="end.html" class="nav_link">Tienda</a>
+            <button id="modoBtn" class="btn_modo" onclick="modo_oscuro()"></button>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main_formulario">
+
+        <h1 class="titulo_formulario">Tienda de Jerseys Pachuca</h1>
+
+        <!-- MENSAJE -->
+        <div id="mensaje" style="display:none;"></div>
+
+        <!-- FORM -->
+        <form id="formJersey" class="formulario_pachuca">
+
+            <fieldset class="grupo_formulario">
+                <legend class="legend_formulario">Agregar Jersey</legend>
+
+                <label class="label_formulario">Nombre</label>
+                <input type="text" id="nombre" class="input_formulario" required>
+
+                <label class="label_formulario">Dorsal</label>
+                <input type="number" id="dorsal" class="input_formulario" required>
+
+                <label class="label_formulario">Talla</label>
+                <select id="talla" class="input_formulario" required>
+                    <option value="">Selecciona</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+                <label class="label_formulario">Tipo</label>
+                <select id="tipo" class="input_formulario" required>
+                    <option value="">Selecciona</option>
+                    <option value="local">Local</option>
+                    <option value="visitante">Visitante</option>
+                    <option value="tercero">Tercero</option>
+                </select>
+
+                <label class="label_formulario">Precio</label>
+                <input type="number" id="precio" class="input_formulario" step="0.01" min="0" required>
+
+                <label class="label_formulario">Descuento (%)</label>
+                <input type="number" id="descuento" class="input_formulario">
+
+                <label class="label_formulario">Stock</label>
+                <input type="number" id="stock" class="input_formulario">
+
+                <button type="submit" id="btnGuardar" class="boton_formulario">Guardar</button>
+                <button type="button" id="btnCancelar" class="boton_formulario" style="display:none;">Cancelar</button>
+
+            </fieldset>
+        </form>
+
+        <!-- TABLA -->
+        <div class="contenedor_tabla">
+
+            <table class="tabla_titulos tabla_jerseys">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Dorsal</th>
+                        <th>Talla</th>
+                        <th>Tipo</th>
+                        <th>Precio</th>
+                        <th>Descuento</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla"></tbody>
+            </table>
+
+        </div>
+
+    </main>
+
+    <!-- BOTÓN ARRIBA -->
+    <button id="arriba">⬆</button>
+
+    <!-- FOOTER -->
+    <footer id="footer_principal">
+        &copy; 2024 Wiki Del Pachuca.
+        <br>
+        Todos los derechos reservados, HCM.
+    </footer>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+    <script src="logica.js"></script>
+
+</body>
+</html>
