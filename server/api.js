@@ -95,7 +95,7 @@ app.delete('/api/jerseys/:id', async (req, res) => {
 
 // HOME → tu end.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../end.html'));
+  res.sendFile(path.join(__dirname, '../public/end.html'));
 });
 
 app.listen(PORT, () => {
